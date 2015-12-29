@@ -11,7 +11,7 @@ function connect() {
 }
 
 module.exports.init = function() {
-    socket = io.connect('http://192.168.0.100:8080');
+    socket = io.connect('192.168.0.100:8080');
     connect();
     socket.on('disconnect', function() {
         connected = false;
@@ -23,6 +23,18 @@ module.exports.sendHi = function(client, callback) {
     if (connected) {
         socket.emit('greeting', client, function(data) {
            console.log("Server Has Reponded to " + client + "'s Greeting!"); 
+           callback(1);
+        });
+    } else {
+        console.log("Not Connected To Server!!!!");
+        callback(0);
+    }
+}
+
+module.exports.sendEvent = function(eventName, data, callback) {
+    if (connected) {
+        socket.emit(eventName, data, function(res) {
+           console.log("Server was able to ", eventName, " the ", data); 
            callback(1);
         });
     } else {

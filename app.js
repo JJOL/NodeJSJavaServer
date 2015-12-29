@@ -13,14 +13,18 @@ app.get("/", function(req, res) {
         } else {
             res.send("Connection is Dead");
         }
-        //console.log("Done");
     });
-   
+});
+
+app.get('/spawn/:type', function(req, res) {
+   controller.sendEvent('spawn', req.params.type, function(status) {
+       if(status) {
+            res.send("You Have Doomed Players With " + req.params.type + "s!");
+        } else {
+            res.send("Connection is Dead");
+        }
+   });
 });
 
 
 app.listen(3000);
-
-// Connect to server
-
-
