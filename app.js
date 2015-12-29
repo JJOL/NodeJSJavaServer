@@ -19,25 +19,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-/*app.get("/", function(req, res) {
-    controller.sendHi("Juan", function(status) {
-        if(status) {
-            res.send("Java Says Hi!");
-        } else {
-            res.send("Connection is Dead");
-        }
-    });
-});*/
-
-app.get('/spawn/:type', function(req, res) {
-   controller.sendEvent('spawn', req.params.type, function(status) {
-       if(status) {
-            res.send("You Have Doomed Players With " + req.params.type + "s!");
-        } else {
-            res.send("Connection is Dead");
-        }
-   });
-});
-
 
 app.listen(3000);

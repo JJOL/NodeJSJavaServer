@@ -11,12 +11,11 @@ function connect() {
 }
 
 module.exports.init = function() {
-    socket = io.connect('192.168.0.100:8080');
+    socket = io.connect('localhost:8080');
     connect();
     socket.on('disconnect', function() {
         connected = false;
         console.log("Connection to Java has beem Lost!");
-        //connect();
     });
 }
 module.exports.sendHi = function(client, callback) {
@@ -42,5 +41,3 @@ module.exports.sendEvent = function(eventName, data, callback) {
         callback(0);
     }
 }
-//module.exports = Controller;
-
