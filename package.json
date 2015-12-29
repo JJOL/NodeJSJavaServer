@@ -2,11 +2,15 @@
   "name": "mchgwebframe",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "client-sessions": "^0.7.0",
+    "ejs": "^2.3.4",
     "express": "^4.13.3",
     "http": "^0.0.0",
+    "serve-favicon": "^2.3.0",
     "socket.io": "^1.3.7",
     "socket.io-client": "^1.3.7"
   },
