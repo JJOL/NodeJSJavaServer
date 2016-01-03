@@ -41,3 +41,21 @@ module.exports.sendEvent = function(eventName, data, callback) {
         callback(0);
     }
 }
+
+module.exports.getInfo = function(key, options, callback) {
+    var opts;
+    if (typeof options === 'function') {
+        opts = {};
+    } else {
+        opts = options;
+    }
+    
+    if(!connected) {
+        callback(0);
+        return;
+    }
+    
+    socket.emit('getInfo', JSON.stringify({key: key, options: opts}), function(res) {
+        callback(1, res);
+    });
+}

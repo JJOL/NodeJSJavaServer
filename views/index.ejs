@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>MCHunger Games!</title>
+    <link rel="stylesheet" href="/styles/general.css" >
 </head>
 <body>
     <h1>Welcome To MCHunger Games For Real!</h1>
+    <header>
+        <% include ./partials/menu %>
+    </header>
+    <div id="wrapper">
+        <section id="left" class="options">
+            <div>
+                <h4>Players</h4>
+            </div>
+            <ul>
+                <% for(var i=0; i < players.length; i++){ %>
+                    <li class="m_item column_item"><%= players[i].nick %></li>
+                <% } %>
+            </ul>
+        </section>
+        <section id="main" class="content">
+            
+        </section>
+        <section id="right" class="options">
+           
+        </section>
+    </div>
 </body>
 </html>
