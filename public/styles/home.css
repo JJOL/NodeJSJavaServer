@@ -1,0 +1,8 @@
+#timer-display {
+    color: #808080;
+}
+#page-container section {
+    width: 90%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}

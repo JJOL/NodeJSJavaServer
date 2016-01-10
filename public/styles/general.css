@@ -1,9 +1,183 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-.m_item {
+body {
+    background-color: black; 
+    font-family: 'Exo 2', sans-serif;
+}
+
+a {
     text-decoration: none;
-    list-style-type: none;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+}
+
+#banner {
+    position: relative;
+    height: 344px;
+    overflow: hidden;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cristal-top {
+    
+    position: absolute;
+    display: block;
+    width: 100%;
+    background: rgba(5, 5, 15, 0.6);
+    color: white;
+}
+
+.cristal-top div {
+    display: inline-block;
+    width: 100%;
+}
+
+#secondary {
+    float: right;
+    margin: auto 0;
+}
+
+nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+nav li {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+}
+nav li a {
+    display: block;
+    padding: 15px 0;
+    color: white;
+    transition: color .4s,
+    background-color .4s;
+    -webkit-transition: color .4s,
+    background-color .4s;
+}
+
+nav li:hover a {
+    color: #111111;
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+#primary {
+    text-align: center;
+}
+
+.cristal-top h1 {
+    width: 100%;
+    /*top: 0px;*/
+}
+
+.cristal-top #serverIp {
+    /*margin-left: 5%;*/
+}
+
+header #banner figure {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*header #banner figure img {
+    
+    height: 336px;
+}*/
+header #banner img {
+    
+    height: 344px;
+}
+
+#bannerImg {
+    display: block;
+}
+
+/* Main Page Container */
+
+#page-container {
+    height: 800px;
+    background: whitesmoke;
+    padding-top: 30px;
+}
+
+.feature {
+    display: block;
+    overflow: hidden;
+}
+
+/* Footer */
+
+.page-footer {
+    height: 300px;
+}
+
+@media screen and (min-width: 480px) {
+    /*header #banner figure img {
+        height: auto;
+        width: 100%;
+    }*/
+}
+
+@media screen and (min-width: 553px) {
+    /*header #banner figure img {
+        height: auto;
+        width: 100%;
+    }*/
+    header #banner img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    /*header #banner figure img {
+        width: 100%;
+        height: auto;
+    }*/
+    header #banner figure img {
+        width: 100%;
+        height: auto;
+        top: -150px;
+    }
+    header #banner .cristal-top #primary {
+        width: 40%;
+    }
+    
+    header #banner .cristal-top #secondary {
+        width: 59%;
+    }
+    
+    nav ul li {
+        width: 19%;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    
+}
+
+
+.centralized {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 30px;
+}
+
+.page-card {
+        box-shadow: 0px 3px 3px #454545;
 }

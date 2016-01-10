@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MCHunger Games!</title>
-    <link rel="stylesheet" href="/styles/general.css" >
+    <title>Minecraft | Live Hunger Games</title>
+    <meta name="description" content="Minecraft Hunger Games in Real time that you can watch and control as a real Hungergames GameMaker">
+    <% include ./partials/head %>
+    <link rel="stylesheet" href="/styles/bannerimages.css">
+    <link rel="stylesheet" href="/styles/home.css">
 </head>
 <body>
-    <h1>Welcome To MCHunger Games For Real!</h1>
-    <header>
-        <% include ./partials/menu %>
-    </header>
-    <div id="wrapper">
-        <section id="left" class="options">
-            <div>
-                <h4>Players</h4>
+    <header class="page-card">
+        <div id="banner">
+            <div id="bannerImg">
+                <img src="" alt="" id="img1">
+                <img src="/imgs/map1.png" id="img2">
             </div>
-            <ul>
-                <% for(var i=0; i < players.length; i++){ %>
-                    <li class="m_item column_item"><%= players[i].nick %></li>
-                <% } %>
-            </ul>
+            <% include ./partials/menu %>
+        </div>
+    </header>
+    
+    <div id="page-container">
+        <section class="centralized page-card" id="timer-display">
+            <h3>Getting Game Timer...</h3>
         </section>
-        <section id="main" class="content">
+        <h3>Main Content</h3>
+        <section class="feature">
             
         </section>
-        <section id="right" class="options">
-           
-        </section>
     </div>
+
+    <footer class="page-footer">
+        
+    </footer>
+    <script>
+        $(document).ready(function() {
+
+            var flag = true, path = "/imgs/";
+            var imgs = ["map1.png", "map2.png", "map3.png", "map4.png", "map5.jpg"];
+            var index = 1;
+            setInterval(function() {
+                if(flag) {
+                    $("#img1").attr("src", path+imgs[index++]);
+                    $("#img1").on('load', function() {
+                        $("#img2").addClass("image-off");    
+                    });
+                       
+                } else {
+                    $("#img2").attr("src", path+imgs[index++]);
+                    $("#img2").on('load', function() {
+                        $("#img2").removeClass("image-off");    
+                    })
+                    // $("#img2").removeClass("image-off");
+                }
+                flag = !flag;
+                index = (index == imgs.length) ? 0 : index;
+            }, 7000);
+            
+        });
+    </script>
 </body>
 </html>

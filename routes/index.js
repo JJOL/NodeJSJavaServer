@@ -8,4 +8,8 @@ router.get('/', function(req, res) {
     res.render('index', {players: players});
 });
 
+router.get('/about', function(req, res) {
+    res.render("./pages/about.ejs");
+});
+
 module.exports = router;
