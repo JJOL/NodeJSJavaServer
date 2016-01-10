@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.14.2",
     "client-sessions": "^0.7.0",
